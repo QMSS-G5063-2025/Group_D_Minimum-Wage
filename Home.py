@@ -1,44 +1,52 @@
-import streamlit as st, base64, pathlib
+import streamlit as st
+from PIL import Image
 
+# Page setup
+st.set_page_config(page_title="Minimum Wage in Europe", layout="centered")
 
-st.title("Minimum Wage and Wage Growth Trends in Europe")
-st.markdown(
-    """
-**Team members:** Yongjun Zhu · Yue Wei · Lan Wang · Yuanjing Zhu
-    """
-)
+# Load and display banner image (top, centered, larger)
+image = Image.open("eu.jpg")  
+st.image(image, use_container_width=True)
 
-st.header("Abstract")
-st.markdown(
-    """
-We investigate minimum-wage dynamics across Europe and their links to economic growth and geography.  
-Our study tackles five core questions:
+# Title and team
+st.markdown("""
+<h1 style='text-align: center; margin-top: 1.2rem;'>📊 Minimum Wage and Wage Growth Trends in Europe</h1>
+<p style='text-align: center; font-size: 1rem; color: #444;'>👥 <b>Team Members:</b> Yongjun Zhu · Yue Wei · Lan Wang · Yuanjing Zhu</p>
+<hr style='margin-top: 1.5rem;'>
+""", unsafe_allow_html=True)
 
-1. **Evolution of minimum wages (2017–2023).**  
-   How have nominal and real minimum wages changed across regions and income groups?
+# ✨ Introduction
+st.markdown("""
+### 🎯 Project Introduction
 
-2. **Minimum vs. actual wage levels.**  
-   Using OECD and ILO data, how do statutory minima compare with broader wage distributions?
+As the cost of living rises across Europe, minimum wage policies are under increasing scrutiny. Policymakers, researchers, and the public alike are asking:
 
-3. **Economic-growth connection.**  
-   Does faster GDP growth (World Bank data) coincide with stronger wage increases?
+- Are wage floors keeping up with inflation?
+- Do wage increases correspond with real economic growth?
+- How do wage policies differ across regions?
 
-4. **Geographical disparities.**  
-   What regional patterns emerge when we map wage policies and trends?
+Our project answers these questions using **interactive visualizations** and data from **ILO**, **OECD**, and the **World Bank**.
+""")
 
-5. **Power of interactive visualisation.**  
-   How can maps and time-series dashboards enhance understanding of wage dynamics?
+# ✨ Objectives
+st.markdown("""
+### ✅ Our Objectives
 
----
+- Explore **trends in nominal and real minimum wages** from 2017–2023  
+- Compare **minimum wages vs. actual income distributions**  
+- Investigate the **relationship between GDP growth and wage change**  
+- Visualize **geographic disparities** across European countries  
+- Build an **interactive dashboard** to communicate these insights
+""")
 
-### Data & Methods
-* **Sources:** ILO, OECD, World Bank.  
-* **Pre-processing:** harmonise country names, handle missing values, align currencies/inflation.  
-* **Visualisation stack:**  
-  * `seaborn` / `matplotlib` – line charts for Europe-wide and per-country trends  
-  * `Folium` + OpenStreetMap – interactive choropleth with pop-ups & year slider  
-* **Goal:** deliver a clear, data-driven picture of wage policies, economic context, and regional disparities across Europe.
-    """,
-    unsafe_allow_html=False
-)
+# ✨ Data & Methods
+st.markdown("""
+### 🔧 Data & Methods
 
+- **📚 Sources:** ILO Global Wage Report, OECD Minimum Wage Database, World Bank GDP  
+- **🛠️ Preprocessing:** Standardized country names, harmonized inflation adjustments, handled missing data  
+- **📊 Tools Used:**
+    - `Seaborn` / `Matplotlib` – trend lines and comparisons  
+    - `Folium` – choropleth maps for regional disparities  
+    - `Plotly` – interactive scatter plots and animations
+""")
