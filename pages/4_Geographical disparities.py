@@ -26,9 +26,9 @@ from streamlit_folium import st_folium
 def load_wage_data(xlsx_path="globalwagereport-2024-25data.xlsx"):
     df = pd.read_excel(xlsx_path, sheet_name="Real wage growth")
     cols = ["country_name", 2017, 2018, 2019, 2020, 2021, 2022, 2023]
-    df = df[cols].dropna(subset=[2017, 2023]).copy()
-    df["Total_Growth_Rate"] = ((df[2023] - df[2017]) / df[2017]) * 100
-    df["Avg_Annual_Growth_Rate"] = df["Total_Growth_Rate"] / 6
+    df = df[cols].dropna(subset=[2017, 2018,2019,2020,2021,2022,2023]).copy()
+    df["Total_Growth_Rate"] = df[2023]+df[2022]+df[2021]+df[2020]+df[2019]+df[2018]+df[2017]
+    df["Avg_Annual_Growth_Rate"] = df["Total_Growth_Rate"] / 7
     return df
 
 @st.cache_data
