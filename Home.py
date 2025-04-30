@@ -17,7 +17,7 @@ st.markdown("""
 
 # ✨ Introduction
 st.markdown("""
-### 🎯 Project Introduction
+### Project Introduction
 
 As the cost of living rises across Europe, minimum wage policies are under increasing scrutiny. Policymakers, researchers, and the public alike are asking:
 
@@ -30,7 +30,7 @@ Our project answers these questions using **interactive visualizations** and dat
 
 # ✨ Objectives
 st.markdown("""
-### ✅ Our Objectives
+### Our Objectives
 
 - Explore **trends in nominal and real minimum wages** from 2017–2023  
 - Compare **minimum wages vs. actual income distributions**  
@@ -41,7 +41,7 @@ st.markdown("""
 
 # ✨ Data & Methods
 st.markdown("""
-### 🔧 Data & Methods
+### Data & Methods
 
 - **📚 Sources:** ILO Global Wage Report, OECD Minimum Wage Database, World Bank GDP  
 - **🛠️ Preprocessing:** Standardized country names, harmonized inflation adjustments, handled missing data  
@@ -49,4 +49,9 @@ st.markdown("""
     - `Seaborn` / `Matplotlib` – trend lines and comparisons  
     - `Folium` – choropleth maps for regional disparities  
     - `Plotly` – interactive scatter plots and animations
+""")
+
+# ✨ Summary line
+st.markdown("""
+This dashboard offers a **data-driven exploration of wage policy dynamics** across Europe, empowering users to compare regions and trends with clarity.
 """)
